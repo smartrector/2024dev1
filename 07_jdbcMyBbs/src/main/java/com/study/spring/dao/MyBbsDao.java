@@ -33,6 +33,19 @@ public class MyBbsDao implements IMyBbsDao {
 		
 		return dto;
 	}
+	
+	@Override
+	public int deleteDao(String id) {
+		String query = "delete from mybbs1 where id = ?";
+		return jdbcTemplate.update(query, Integer.parseInt(id));
+
+	}
+	
+	@Override
+	public int writeDao(String writer,String title,String content) {
+		String query = "insert into mybbs1 (writer,title,content) values (?,?,?)";
+		return jdbcTemplate.update(query,writer,title,content);
+	}
 
 
 }

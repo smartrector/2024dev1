@@ -12,8 +12,10 @@ contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
     <c:forEach var="dto" items="${lists}">
       <div>
         ${dto.id} /${dto.writer} /
-        <a href="/view?id=${dto.id}">${dto.title}</a> / ${dto.content}
+        <a href="/view?id=${dto.id}">${dto.title}</a> / ${dto.content} /
+        <a href="/delete?id=${dto.id}">삭제</a>
       </div>
     </c:forEach>
+    <a href="/writerForm">글쓰기</a>
   </body>
 </html>
