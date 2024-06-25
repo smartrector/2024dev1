@@ -1,0 +1,85 @@
+
+[2024-06-25T10:43:54.546809+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 2169
+
+
+[2024-06-25T10:43:54.794806300+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"1","method":"initialize","params":{"processId":7344,"rootUri":null,"capabilities":{"workspace":{"applyEdit":true,"workspaceEdit":{"documentChanges":true,"resourceOperations":["create","delete","rename"],"failureHandling":"undo","changeAnnotationSupport":{"groupsOnLabel":true}},"symbol":{"dynamicRegistration":true},"executeCommand":{"dynamicRegistration":true},"workspaceFolders":true,"configuration":true,"codeLens":{"refreshSupport":true}},"textDocument":{"synchronization":{"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"completionItem":{"snippetSupport":true,"documentationFormat":["markdown","plaintext"],"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"insertTextModeSupport":{"valueSet":[1,2]}},"contextSupport":true,"completionList":{"itemDefaults":["commitCharacters","editRange","insertTextFormat","insertTextMode"]}},"hover":{"contentFormat":["markdown","plaintext"]},"signatureHelp":{},"references":{},"documentHighlight":{},"documentSymbol":{"symbolKind":{"valueSet":[18,17,5,14,9,10,22,24,8,1,12,11,20,6,2,3,21,16,19,25,4,7,15,23,26,13]},"hierarchicalDocumentSymbolSupport":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{},"definition":{"linkSupport":true},"typeDefinition":{"linkSupport":true},"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}},"dataSupport":true,"resolveSupport":{"properties":["edit"]},"dynamicRegistration":true},"codeLens":{},"documentLink":{},"colorProvider":{},"rename":{"prepareSupport":true},"foldingRange":{},"selectionRange":{},"inlayHint":{}},"window":{"workDoneProgress":true,"showMessage":{},"showDocument":{"support":true}}},"clientInfo":{"name":"Spring Tool Suite 4","version":"0.18.8.202404261614"},"trace":"off","workspaceFolders":[{"uri":"file:///D:/dev1/04_params_model/","name":"04_params_model"},{"uri":"file:///D:/dev1/05_lombok/","name":"05_lombok"},{"uri":"file:///D:/dev1/06_jdbcMysql/","name":"06_jdbcMysql"},{"uri":"file:///D:/dev1/07_jdbcMyBbs/","name":"07_jdbcMyBbs"}]}}
+[2024-06-25T10:55:44.036905300+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 60
+
+
+[2024-06-25T10:55:44.037907400+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"2","method":"shutdown","params":null}
+[2024-06-25T10:55:44.040905100+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 47
+
+
+[2024-06-25T10:55:44.040905100+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","method":"exit","params":null}
+[2024-06-25T10:55:44.067332300+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 2169
+
+
+[2024-06-25T10:55:44.068334300+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"1","method":"initialize","params":{"processId":7344,"rootUri":null,"capabilities":{"workspace":{"applyEdit":true,"workspaceEdit":{"documentChanges":true,"resourceOperations":["create","delete","rename"],"failureHandling":"undo","changeAnnotationSupport":{"groupsOnLabel":true}},"symbol":{"dynamicRegistration":true},"executeCommand":{"dynamicRegistration":true},"workspaceFolders":true,"configuration":true,"codeLens":{"refreshSupport":true}},"textDocument":{"synchronization":{"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"completionItem":{"snippetSupport":true,"documentationFormat":["markdown","plaintext"],"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"insertTextModeSupport":{"valueSet":[1,2]}},"contextSupport":true,"completionList":{"itemDefaults":["commitCharacters","editRange","insertTextFormat","insertTextMode"]}},"hover":{"contentFormat":["markdown","plaintext"]},"signatureHelp":{},"references":{},"documentHighlight":{},"documentSymbol":{"symbolKind":{"valueSet":[18,17,5,14,9,10,22,24,8,1,12,11,20,6,2,3,21,16,19,25,4,7,15,23,26,13]},"hierarchicalDocumentSymbolSupport":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{},"definition":{"linkSupport":true},"typeDefinition":{"linkSupport":true},"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}},"dataSupport":true,"resolveSupport":{"properties":["edit"]},"dynamicRegistration":true},"codeLens":{},"documentLink":{},"colorProvider":{},"rename":{"prepareSupport":true},"foldingRange":{},"selectionRange":{},"inlayHint":{}},"window":{"workDoneProgress":true,"showMessage":{},"showDocument":{"support":true}}},"clientInfo":{"name":"Spring Tool Suite 4","version":"0.18.8.202404261614"},"trace":"off","workspaceFolders":[{"uri":"file:///D:/dev1/04_params_model/","name":"04_params_model"},{"uri":"file:///D:/dev1/05_lombok/","name":"05_lombok"},{"uri":"file:///D:/dev1/06_jdbcMysql/","name":"06_jdbcMysql"},{"uri":"file:///D:/dev1/07_jdbcMyBbs/","name":"07_jdbcMyBbs"}]}}
+[2024-06-25T10:55:54.042670400+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 60
+
+
+[2024-06-25T10:55:54.043671500+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"2","method":"shutdown","params":null}
+[2024-06-25T10:55:54.044671200+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 47
+
+
+[2024-06-25T10:55:54.045672900+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","method":"exit","params":null}
+[2024-06-25T10:55:54.139538+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 2169
+
+
+[2024-06-25T10:55:54.143540500+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"1","method":"initialize","params":{"processId":7344,"rootUri":null,"capabilities":{"workspace":{"applyEdit":true,"workspaceEdit":{"documentChanges":true,"resourceOperations":["create","delete","rename"],"failureHandling":"undo","changeAnnotationSupport":{"groupsOnLabel":true}},"symbol":{"dynamicRegistration":true},"executeCommand":{"dynamicRegistration":true},"workspaceFolders":true,"configuration":true,"codeLens":{"refreshSupport":true}},"textDocument":{"synchronization":{"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"completionItem":{"snippetSupport":true,"documentationFormat":["markdown","plaintext"],"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"insertTextModeSupport":{"valueSet":[1,2]}},"contextSupport":true,"completionList":{"itemDefaults":["commitCharacters","editRange","insertTextFormat","insertTextMode"]}},"hover":{"contentFormat":["markdown","plaintext"]},"signatureHelp":{},"references":{},"documentHighlight":{},"documentSymbol":{"symbolKind":{"valueSet":[18,17,5,14,9,10,22,24,8,1,12,11,20,6,2,3,21,16,19,25,4,7,15,23,26,13]},"hierarchicalDocumentSymbolSupport":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{},"definition":{"linkSupport":true},"typeDefinition":{"linkSupport":true},"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}},"dataSupport":true,"resolveSupport":{"properties":["edit"]},"dynamicRegistration":true},"codeLens":{},"documentLink":{},"colorProvider":{},"rename":{"prepareSupport":true},"foldingRange":{},"selectionRange":{},"inlayHint":{}},"window":{"workDoneProgress":true,"showMessage":{},"showDocument":{"support":true}}},"clientInfo":{"name":"Spring Tool Suite 4","version":"0.18.8.202404261614"},"trace":"off","workspaceFolders":[{"uri":"file:///D:/dev1/04_params_model/","name":"04_params_model"},{"uri":"file:///D:/dev1/05_lombok/","name":"05_lombok"},{"uri":"file:///D:/dev1/06_jdbcMysql/","name":"06_jdbcMysql"},{"uri":"file:///D:/dev1/07_jdbcMyBbs/","name":"07_jdbcMyBbs"}]}}
+[2024-06-25T11:02:59.146378200+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 2169
+
+
+[2024-06-25T11:02:59.265584300+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"1","method":"initialize","params":{"processId":7636,"rootUri":null,"capabilities":{"workspace":{"applyEdit":true,"workspaceEdit":{"documentChanges":true,"resourceOperations":["create","delete","rename"],"failureHandling":"undo","changeAnnotationSupport":{"groupsOnLabel":true}},"symbol":{"dynamicRegistration":true},"executeCommand":{"dynamicRegistration":true},"workspaceFolders":true,"configuration":true,"codeLens":{"refreshSupport":true}},"textDocument":{"synchronization":{"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"completionItem":{"snippetSupport":true,"documentationFormat":["markdown","plaintext"],"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"insertTextModeSupport":{"valueSet":[1,2]}},"contextSupport":true,"completionList":{"itemDefaults":["commitCharacters","editRange","insertTextFormat","insertTextMode"]}},"hover":{"contentFormat":["markdown","plaintext"]},"signatureHelp":{},"references":{},"documentHighlight":{},"documentSymbol":{"symbolKind":{"valueSet":[18,17,5,14,9,10,22,24,8,1,12,11,20,6,2,3,21,16,19,25,4,7,15,23,26,13]},"hierarchicalDocumentSymbolSupport":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{},"definition":{"linkSupport":true},"typeDefinition":{"linkSupport":true},"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}},"dataSupport":true,"resolveSupport":{"properties":["edit"]},"dynamicRegistration":true},"codeLens":{},"documentLink":{},"colorProvider":{},"rename":{"prepareSupport":true},"foldingRange":{},"selectionRange":{},"inlayHint":{}},"window":{"workDoneProgress":true,"showMessage":{},"showDocument":{"support":true}}},"clientInfo":{"name":"Spring Tool Suite 4","version":"0.18.8.202404261614"},"trace":"off","workspaceFolders":[{"uri":"file:///D:/dev1/04_params_model/","name":"04_params_model"},{"uri":"file:///D:/dev1/05_lombok/","name":"05_lombok"},{"uri":"file:///D:/dev1/06_jdbcMysql/","name":"06_jdbcMysql"},{"uri":"file:///D:/dev1/07_jdbcMyBbs/","name":"07_jdbcMyBbs"}]}}
+[2024-06-25T11:03:37.546764+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 60
+
+
+[2024-06-25T11:03:37.546764+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"2","method":"shutdown","params":null}
+[2024-06-25T11:03:37.549767400+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 47
+
+
+[2024-06-25T11:03:37.549767400+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","method":"exit","params":null}
+[2024-06-25T11:03:37.573764100+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 2169
+
+
+[2024-06-25T11:03:37.573764100+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"1","method":"initialize","params":{"processId":7636,"rootUri":null,"capabilities":{"workspace":{"applyEdit":true,"workspaceEdit":{"documentChanges":true,"resourceOperations":["create","delete","rename"],"failureHandling":"undo","changeAnnotationSupport":{"groupsOnLabel":true}},"symbol":{"dynamicRegistration":true},"executeCommand":{"dynamicRegistration":true},"workspaceFolders":true,"configuration":true,"codeLens":{"refreshSupport":true}},"textDocument":{"synchronization":{"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"completionItem":{"snippetSupport":true,"documentationFormat":["markdown","plaintext"],"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"insertTextModeSupport":{"valueSet":[1,2]}},"contextSupport":true,"completionList":{"itemDefaults":["commitCharacters","editRange","insertTextFormat","insertTextMode"]}},"hover":{"contentFormat":["markdown","plaintext"]},"signatureHelp":{},"references":{},"documentHighlight":{},"documentSymbol":{"symbolKind":{"valueSet":[18,17,5,14,9,10,22,24,8,1,12,11,20,6,2,3,21,16,19,25,4,7,15,23,26,13]},"hierarchicalDocumentSymbolSupport":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{},"definition":{"linkSupport":true},"typeDefinition":{"linkSupport":true},"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}},"dataSupport":true,"resolveSupport":{"properties":["edit"]},"dynamicRegistration":true},"codeLens":{},"documentLink":{},"colorProvider":{},"rename":{"prepareSupport":true},"foldingRange":{},"selectionRange":{},"inlayHint":{}},"window":{"workDoneProgress":true,"showMessage":{},"showDocument":{"support":true}}},"clientInfo":{"name":"Spring Tool Suite 4","version":"0.18.8.202404261614"},"trace":"off","workspaceFolders":[{"uri":"file:///D:/dev1/04_params_model/","name":"04_params_model"},{"uri":"file:///D:/dev1/05_lombok/","name":"05_lombok"},{"uri":"file:///D:/dev1/06_jdbcMysql/","name":"06_jdbcMysql"},{"uri":"file:///D:/dev1/07_jdbcMyBbs/","name":"07_jdbcMyBbs"}]}}
+[2024-06-25T11:03:47.548378400+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 60
+
+
+[2024-06-25T11:03:47.548378400+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"2","method":"shutdown","params":null}
+[2024-06-25T11:03:47.550377700+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 47
+
+
+[2024-06-25T11:03:47.551376800+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","method":"exit","params":null}
+[2024-06-25T11:03:47.566374800+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+Content-Length: 2169
+
+
+[2024-06-25T11:03:47.566374800+09:00] LSP4E_TO_LANGUAGE_SERVER org.eclipse.languageserver.languages.springboot:
+{"jsonrpc":"2.0","id":"1","method":"initialize","params":{"processId":7636,"rootUri":null,"capabilities":{"workspace":{"applyEdit":true,"workspaceEdit":{"documentChanges":true,"resourceOperations":["create","delete","rename"],"failureHandling":"undo","changeAnnotationSupport":{"groupsOnLabel":true}},"symbol":{"dynamicRegistration":true},"executeCommand":{"dynamicRegistration":true},"workspaceFolders":true,"configuration":true,"codeLens":{"refreshSupport":true}},"textDocument":{"synchronization":{"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"completionItem":{"snippetSupport":true,"documentationFormat":["markdown","plaintext"],"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"insertTextModeSupport":{"valueSet":[1,2]}},"contextSupport":true,"completionList":{"itemDefaults":["commitCharacters","editRange","insertTextFormat","insertTextMode"]}},"hover":{"contentFormat":["markdown","plaintext"]},"signatureHelp":{},"references":{},"documentHighlight":{},"documentSymbol":{"symbolKind":{"valueSet":[18,17,5,14,9,10,22,24,8,1,12,11,20,6,2,3,21,16,19,25,4,7,15,23,26,13]},"hierarchicalDocumentSymbolSupport":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{},"definition":{"linkSupport":true},"typeDefinition":{"linkSupport":true},"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}},"dataSupport":true,"resolveSupport":{"properties":["edit"]},"dynamicRegistration":true},"codeLens":{},"documentLink":{},"colorProvider":{},"rename":{"prepareSupport":true},"foldingRange":{},"selectionRange":{},"inlayHint":{}},"window":{"workDoneProgress":true,"showMessage":{},"showDocument":{"support":true}}},"clientInfo":{"name":"Spring Tool Suite 4","version":"0.18.8.202404261614"},"trace":"off","workspaceFolders":[{"uri":"file:///D:/dev1/04_params_model/","name":"04_params_model"},{"uri":"file:///D:/dev1/05_lombok/","name":"05_lombok"},{"uri":"file:///D:/dev1/06_jdbcMysql/","name":"06_jdbcMysql"},{"uri":"file:///D:/dev1/07_jdbcMyBbs/","name":"07_jdbcMyBbs"}]}}
