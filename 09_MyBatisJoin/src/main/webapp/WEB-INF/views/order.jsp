@@ -8,11 +8,13 @@ contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
     <title>Insert title here</title>
   </head>
   <body>
-    <h2>mybbs 내용보기</h2>
-    작성자 : ${dto.writer}<br />
-    제목 : ${dto.title}<br />
-    내용 : ${dto.content}<br />
+    <h2>join</h2>
+    <c:forEach var="dto" items="${order1}">
+      <div>
+        ${dto.ono1} /${dto.cname1} /${dto.cjob1}
+       
+      </div>
+    </c:forEach>
 
-    <a href="./list">목록</a>
   </body>
 </html>
