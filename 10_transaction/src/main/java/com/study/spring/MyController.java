@@ -27,15 +27,18 @@ public class MyController {
 	}
 	
 	@RequestMapping("/buy_ticket_card")
-	public String buy_ticket_card(@RequestParam("consumerId") String consumerId,
-							      @RequestParam("amount") String amount,
-							      @RequestParam("error") String error,
-							      Model model)
+	public String buy_ticket_card(
+			@RequestParam("consumerId") String consumerId,
+			@RequestParam("amount") String amount,
+			@RequestParam("error") String error,
+			Model model
+
+							      )
 	{
 		int nResult = buyTicket.buy(consumerId, Integer.parseInt(amount), error);
 		
-		model.addAttribute("consumerId", consumerId);
-		model.addAttribute("amount", amount);
+		 model.addAttribute("consumerId", consumerId);
+	     model.addAttribute("amount", amount);
 		if (nResult == 1) {
 			return "buy_ticket_end";
 		} else {
