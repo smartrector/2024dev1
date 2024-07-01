@@ -28,5 +28,6 @@ public class Member1 {
 		this.createDate = createDate;
 	}
 	
+	
 
 }
