@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 public class Member3 {
 	@Id
 	private String email;
+	
 	private String name;
 	@Column(name="create_date")
 	private LocalDate createDate;
