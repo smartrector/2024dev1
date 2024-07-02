@@ -32,8 +32,16 @@ public class MemberService {
 		memberRepository.deleteById(id);
 	}
 	
-	public Member update(Member member) {
-		Member returnMember = memberRepository.save(member);
-		return returnMember;
-	}
+	 public Member update(Member member) {
+	        // 존재하는 Member 엔티티를 검색
+	        Member existingMember = memberRepository.findById(member.getId())
+	                .orElseThrow(() -> new RuntimeException("Member not found"));
+
+	        // 필드 업데이트
+	        existingMember.setUsername(member.getUsername());
+	        existingMember.setCreateDate(member.getCreateDate());
+
+	        // 업데이트된 Member 엔티티를 저장
+	        return memberRepository.save(existingMember);
+	    }
 }

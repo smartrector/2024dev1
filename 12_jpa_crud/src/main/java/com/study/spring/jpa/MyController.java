@@ -14,77 +14,75 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MyController {
 	@Autowired
 	MemberService memberService;
-	
+
 	@RequestMapping("/")
 	public String root() {
 		return "menu";
 	}
-	
+
 	@RequestMapping("/insert") // insert?username=han&content=con
-	public String insert(
-			@RequestParam("username") String username,
-			Model model
-			) {
-		
-		
+	public String insert(@RequestParam("username") String username, Model model) {
+
 //		Member user = new Member();
 //		user.setUsername(username);
 //		user.setCreateDate(LocalDate.now());
-		
+
 		Member user = Member.builder()
 				.username(username)
 				.createDate(LocalDate.now())
 				.build();
-		
+
 		Member result = memberService.insert(user);
-		
-		model.addAttribute("member",result);
-		
+
+		model.addAttribute("member", result);
+
 		return "insert";
-		
+
 	}
-	
-	
-	@RequestMapping("/selectAll") 
+
+	@RequestMapping("/selectAll")
 	public String selectall(Model model) {
 		List<Member> result = memberService.selectAll();
-		model.addAttribute("members",result);
+		model.addAttribute("members", result);
 		return "selectAll";
 	}
-	
+
 	@RequestMapping("/select") // select?id=1
-	public String select(
-			@RequestParam("id") Long id,
-			Model model
-			) {
+	public String select(@RequestParam("id") Long id, Model model) {
 		Optional<Member> result = memberService.select(id);
-		
-		if(result.isPresent()) {
+
+		if (result.isPresent()) {
 			model.addAttribute("member", result.get());
-		}else {
+		} else {
 			model.addAttribute("member", null);
 		}
-		
+
 		return "select";
 	}
-	
+
 	@RequestMapping("/delete") // delete?id=1
-	public String delete(
-			@RequestParam("id") Long id
-			) {
+	public String delete(@RequestParam("id") Long id) {
 		memberService.delete(id);
 		return "delete";
 	}
-	
-	
+
 	@RequestMapping("/update")
-	public String update(Member member,Model model) {
-		Member result = memberService.update(member);
-		model.addAttribute("member",result);
+	public String update(
+			@RequestParam("id") Long id, 
+			@RequestParam("username") String username, 
+			Model model) {
+
+		Member user = Member.builder()
+				.id(id)
+				.username(username)
+				.createDate(LocalDate.now())
+				.build();
+		Member result = memberService.update(user);
+
+		System.out.println(result);
+		model.addAttribute("member", result);
+
 		return "update";
 	}
-	
-	
-		
-	
+
 }
