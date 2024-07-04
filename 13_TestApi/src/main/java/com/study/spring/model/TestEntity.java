@@ -31,6 +31,12 @@ public class TestEntity {
 		this.name = name;
 		this.age = age;
 	}
+
+
+	public void changeNameAndAge(String name2, int age2) {
+		this.name = name2;
+		this.age = age2;
+	}
 	
 	
 	
