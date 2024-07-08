@@ -1,5 +1,8 @@
 package com.study.spring.api;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.study.spring.api.request.CreateAndEditRestaurantRequest;
+import com.study.spring.api.response.RestaurantView;
 import com.study.spring.model.RestaurantEntity;
 import com.study.spring.service.RestaurantSevice;
 
@@ -22,9 +26,11 @@ public class RestaurantApi {
 	
 	private final RestaurantSevice restaurantSevice;
 	
+	@CrossOrigin
 	@GetMapping("/restaurants")
-	public String getRestaurants() {
-		return "getRestaurants";
+	public List<RestaurantView> getRestaurants() {
+//		return "getRestaurants";
+		return restaurantSevice.getAllRestaurants();
 	}
 	
 	

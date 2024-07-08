@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.study.spring.api.request.CreateAndEditRestaurantRequest;
+import com.study.spring.api.response.RestaurantView;
 import com.study.spring.model.MenuEntity;
 import com.study.spring.model.RestaurantEntity;
 import com.study.spring.repository.MenuRepository;
@@ -65,8 +66,21 @@ public class RestaurantSevice {
 
 		restaurantRepository.delete(restaurant);
 
-		//이전메뉴 삭제
+		// 이전메뉴 삭제
 		List<MenuEntity> menus = menuRepository.findAllByRestaurantId(restaurantId);
 		menuRepository.deleteAll(menus);
+	}
+
+	public List<RestaurantView> getAllRestaurants() {
+		List<RestaurantEntity> restaurants = restaurantRepository.findAll();
+
+		return restaurants.stream()
+				.map((restaurant) -> RestaurantView.builder()
+						.id(restaurant.getId())
+						.name(restaurant.getName())
+						.address(restaurant.getAddress())
+						.createdAt(restaurant.getCreatedAt())
+						.updatedAt(restaurant.getUpdatedAt()).build())
+				.toList();
 	}
 }
