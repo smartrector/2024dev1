@@ -17,64 +17,56 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service
 public class RestaurantSevice {
-	
+
 	private final RestaurantRepository restaurantRepository;
 	private final MenuRepository menuRepository;
-	
+
 	@Transactional
-	public RestaurantEntity createRestaurant(
-			CreateAndEditRestaurantRequest request
-			) {
+	public RestaurantEntity createRestaurant(CreateAndEditRestaurantRequest request) {
 //		 RestaurantEntity restaurant = new RestaurantEntity(request.getName(),...);
-		 RestaurantEntity restaurant = RestaurantEntity.builder()
-				 .name(request.getName())
-				 .address(request.getAddress())
-				 .createdAt(ZonedDateTime.now())
-				 .updatedAt(ZonedDateTime.now())
-				 .build();
-		 
-		 restaurantRepository.save(restaurant);
-		 request.getMenus().forEach((menu)->{
+		RestaurantEntity restaurant = RestaurantEntity.builder().name(request.getName()).address(request.getAddress())
+				.createdAt(ZonedDateTime.now()).updatedAt(ZonedDateTime.now()).build();
+
+		restaurantRepository.save(restaurant);
+		request.getMenus().forEach((menu) -> {
 //			 MenuEntity menuEntity = new MenuEntity(test,test,test,.menu.menu.);
-			 MenuEntity menuEntity = MenuEntity.builder()
-					 .restaurantId(restaurant.getId())
-					 .name(menu.getName())
-					 .price(menu.getPrice())
-					 .createdAt(ZonedDateTime.now())
-					 .updatedAt(ZonedDateTime.now())
-					 .build();
-			 
-			 menuRepository.save(menuEntity);
-			 
-		 });
+			MenuEntity menuEntity = MenuEntity.builder().restaurantId(restaurant.getId()).name(menu.getName())
+					.price(menu.getPrice()).createdAt(ZonedDateTime.now()).updatedAt(ZonedDateTime.now()).build();
+
+			menuRepository.save(menuEntity);
+
+		});
 		return restaurant;
 	}
-	
+
 	@Transactional
-	public void editRestaurant(
-			Long restaurantId,
-			CreateAndEditRestaurantRequest request
-			) {
-		RestaurantEntity restaurant = restaurantRepository	.findById(restaurantId)
-															.orElseThrow(()->new RuntimeException("아이디가 없음"));
-		restaurant.changeNameAndAddress(request.getName(),request.getAddress());
+	public void editRestaurant(Long restaurantId, CreateAndEditRestaurantRequest request) {
+		RestaurantEntity restaurant = restaurantRepository.findById(restaurantId)
+				.orElseThrow(() -> new RuntimeException("아이디가 없음"));
+		restaurant.changeNameAndAddress(request.getName(), request.getAddress());
 		restaurantRepository.save(restaurant);
-		
+
+		// 이전메뉴 삭제
+		List<MenuEntity> menus = menuRepository.findAllByRestaurantId(restaurantId);
+		menuRepository.deleteAll(menus);
+
+		// 새로운메뉴 생성
+		request.getMenus().forEach((menu) -> {
+			MenuEntity menuEntity = MenuEntity.builder().restaurantId(restaurantId).name(menu.getName())
+					.price(menu.getPrice()).createdAt(ZonedDateTime.now()).updatedAt(ZonedDateTime.now()).build();
+			menuRepository.save(menuEntity);
+		});
+
+	}
+
+	public void deleteRestaurant(Long restaurantId) {
+		RestaurantEntity restaurant = restaurantRepository.findById(restaurantId)
+				.orElseThrow(() -> new RuntimeException("아이디가 없음"));
+
+		restaurantRepository.delete(restaurant);
+
 		//이전메뉴 삭제
 		List<MenuEntity> menus = menuRepository.findAllByRestaurantId(restaurantId);
 		menuRepository.deleteAll(menus);
-		
-		// 새로운메뉴 생성
-		request.getMenus().forEach((menu)->{
-			MenuEntity menuEntity = MenuEntity.builder()
-					.restaurantId(restaurantId)
-					.name(menu.getName())
-					.price(menu.getPrice())
-					.createdAt(ZonedDateTime.now())
-					.updatedAt(ZonedDateTime.now())
-					.build();
-			menuRepository.save(menuEntity);
-		});
-		
 	}
 }

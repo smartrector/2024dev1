@@ -63,9 +63,10 @@ public class RestaurantApi {
 	}
 	
 	@DeleteMapping("/restaurant/{restaurantId}")
-	public String deleteRestaurant(
+	public void deleteRestaurant(
 			@PathVariable("restaurantId") Long restaurantId
 			) {
-		return "delete restaurant id :"+ restaurantId;
+//		return "delete restaurant id :"+ restaurantId;
+		restaurantSevice.deleteRestaurant(restaurantId);
 	}
 }
