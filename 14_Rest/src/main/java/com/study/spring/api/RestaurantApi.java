@@ -49,15 +49,17 @@ public class RestaurantApi {
 				
 	}
 	@PutMapping("/restaurant/{restaurantId}")
-	public String editRestaurant(
+	public void editRestaurant(
 			@PathVariable("restaurantId") Long restaurantId,
 			@RequestBody CreateAndEditRestaurantRequest request
 			) {
 		
-		return "editRestaurant id : " + restaurantId + ", name : " + request.getName() 
-		+ ", address : " + request.getAddress() 
-		+ ", menu[0].name : " + request.getMenus().get(0).getName()
-		+ ", menu[1].name : " + request.getMenus().get(1).getName();
+//		return "editRestaurant id : " + restaurantId + ", name : " + request.getName() 
+//		+ ", address : " + request.getAddress() 
+//		+ ", menu[0].name : " + request.getMenus().get(0).getName()
+//		+ ", menu[1].name : " + request.getMenus().get(1).getName();
+		
+		restaurantSevice.editRestaurant(restaurantId, request);
 	}
 	
 	@DeleteMapping("/restaurant/{restaurantId}")
