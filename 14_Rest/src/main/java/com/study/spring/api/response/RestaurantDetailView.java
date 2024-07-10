@@ -4,9 +4,11 @@ import java.time.ZonedDateTime;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Builder
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +20,7 @@ public class RestaurantDetailView {
 	private ZonedDateTime updatedAt;
 	private List<Menu> menus;
 	
-	
+	@Builder
 	@Getter
 	@AllArgsConstructor
 	@NoArgsConstructor

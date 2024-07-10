@@ -2,10 +2,13 @@ package com.study.spring.service;
 
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.study.spring.api.request.CreateAndEditRestaurantRequest;
+import com.study.spring.api.response.RestaurantDetailView;
 import com.study.spring.api.response.RestaurantView;
 import com.study.spring.model.MenuEntity;
 import com.study.spring.model.RestaurantEntity;
@@ -72,7 +75,7 @@ public class RestaurantSevice {
 	}
 
 	public List<RestaurantView> getAllRestaurants() {
-		List<RestaurantEntity> restaurants = restaurantRepository.findAll();
+		List<RestaurantEntity> restaurants = restaurantRepository.findAll(Sort.by(Sort.Direction.DESC,"createdAt"));
 
 		return restaurants.stream()
 				.map((restaurant) -> RestaurantView.builder()
@@ -81,6 +84,41 @@ public class RestaurantSevice {
 						.address(restaurant.getAddress())
 						.createdAt(restaurant.getCreatedAt())
 						.updatedAt(restaurant.getUpdatedAt()).build())
-				.toList();
+				.collect(Collectors.toList());
+	}
+	
+	public RestaurantDetailView getRestaurantDetails(Long restaurantId) {
+		
+		 RestaurantEntity restaurant= restaurantRepository.findById(restaurantId).orElseThrow();
+		 List<MenuEntity> menus = menuRepository.findAllByRestaurantId(restaurantId);
+		 
+		
+		return RestaurantDetailView.builder()
+				.id(restaurant.getId())
+				.name(restaurant.getName())
+				.address(restaurant.getAddress())
+				.createdAt(restaurant.getCreatedAt())
+				.updatedAt(restaurant.getUpdatedAt())
+				.menus(
+						//menus.stream().map().toList()
+						menus.stream().map((menu)-> RestaurantDetailView.Menu.builder()
+								.id(menu.getId())
+								.name(menu.getName())
+								.price(menu.getPrice())
+								.createdAt(menu.getCreatedAt())
+								.updatedAt(menu.getUpdatedAt())
+								.build())
+						.toList()
+						)
+				.build();
 	}
 }
+
+
+
+
+
+
+
+
+

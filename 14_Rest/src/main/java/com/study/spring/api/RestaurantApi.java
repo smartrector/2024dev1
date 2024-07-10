@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.study.spring.api.request.CreateAndEditRestaurantRequest;
+import com.study.spring.api.response.RestaurantDetailView;
 import com.study.spring.api.response.RestaurantView;
 import com.study.spring.model.RestaurantEntity;
 import com.study.spring.service.RestaurantSevice;
@@ -35,10 +36,11 @@ public class RestaurantApi {
 	
 	
 	@GetMapping("/restaurant/{restaurantId}")
-	public String getRestaurant(
+	public RestaurantDetailView getRestaurant(
 			@PathVariable("restaurantId") Long restaurantId
 			) {
-		return "getRestaurant id : "+ restaurantId;
+//		return "getRestaurant id : "+ restaurantId;
+		return restaurantSevice.getRestaurantDetails(restaurantId);
 	}
 	
 //	#first
