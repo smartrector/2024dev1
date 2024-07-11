@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.study.spring.dto.ProductDTO;
+import com.study.spring.service.ProductService;
 import com.study.spring.util.CustomFileUtil;
 
 import lombok.RequiredArgsConstructor;
@@ -24,10 +25,12 @@ import lombok.extern.log4j.Log4j2;
 @RequestMapping("/api/products")
 public class ProductController {
 
+	private final ProductService productService;
+	
 	private final CustomFileUtil fileUtil;
 	
 	@PostMapping("/")
-	public Map<String,String> register(ProductDTO productDTO) {
+	public Map<String,Long> register(ProductDTO productDTO) {
 		log.info("register:" + productDTO);
 		
 		List<MultipartFile> files = productDTO.getFiles();
@@ -37,7 +40,9 @@ public class ProductController {
 		
 		log.info(uploadFileNames);
 		
-		return Map.of("Result","success");
+		Long pno = productService.register(productDTO);
+		
+		return Map.of("Result",pno);
 	}
 	
 	@GetMapping("/view/{fileName}")
