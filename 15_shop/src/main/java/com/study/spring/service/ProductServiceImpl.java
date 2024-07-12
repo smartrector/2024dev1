@@ -143,6 +143,46 @@ public class ProductServiceImpl implements ProductService {
 		return productDTO;
 	}
 
+
+	@Override
+	public void modify(ProductDTO productDTO) {
+		
+		//#1 pno read
+		Optional<Product> result = productRepository.findById(productDTO.getPno());
+		Product product = result.orElseThrow();
+		
+		//#2 change
+		product.changePname(productDTO.getPname());
+		product.changePrice(productDTO.getPrice());
+		product.changePdesc(productDTO.getPdesc());
+		
+		//#3 upload file clear
+		product.clearList();
+ 		
+		List<String> uploadFileNames = productDTO.getUploadFileNames();
+		
+		if(uploadFileNames != null && uploadFileNames.size() > 0) {
+			uploadFileNames.stream().forEach(
+					uploadName -> {
+						product.addImageString(uploadName);
+					});
+		}
+		
+		//last
+		productRepository.save(product);
+		
+		
+	}
+
+
+	@Override
+	public void remove(Long pno) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
 	
 	
 	

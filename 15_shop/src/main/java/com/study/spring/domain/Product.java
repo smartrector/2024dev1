@@ -64,6 +64,10 @@ public class Product {
 	public void changeDelFlag(boolean delFlag) {
 		this.delFlag = delFlag;
 	}
+
+	public void clearList() {
+		this.imageList.clear();	
+	}
 	
 	
 

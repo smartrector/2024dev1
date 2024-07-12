@@ -2,12 +2,14 @@ package com.study.spring.controller;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -68,6 +70,49 @@ public class ProductController {
 		return productService.getList(pageRequestDTO);
 	}
 	
+	
+	@PutMapping("/{pno}")
+	public Map<String,String> modify(
+			@PathVariable("pno") Long pno,
+			ProductDTO productDTO
+			){
+		
+		productDTO.setPno(pno);
+		
+		//이전파일이름들
+		ProductDTO oldProductDTO = productService.get(pno);
+		List<String> oldFileNames = oldProductDTO.getUploadFileNames();
+		
+		//새로운파일이름들
+		List<MultipartFile> files = productDTO.getFiles();
+		List<String> currentUploadFileNames = fileUtil.saveFiles(files);
+		
+		//유지된파일들
+		List<String> uploadedFileNames = productDTO.getUploadFileNames();
+		
+		if(currentUploadFileNames != null && currentUploadFileNames.size()>0) {
+			uploadedFileNames.addAll(currentUploadFileNames);
+		}
+		
+		
+		//수정작업
+		productService.modify(productDTO);
+		
+		
+		if(oldFileNames != null && oldFileNames.size()>0) {
+			
+			List<String> removeFiles = oldFileNames.stream()
+					.filter(fileName -> uploadedFileNames.indexOf(fileName) == -1)
+					.collect(Collectors.toList());
+			
+			fileUtil.deleteFiles(removeFiles);
+		}
+		
+		
+		
+		
+		return Map.of("Result","success");
+	}
 	
 	
 	
