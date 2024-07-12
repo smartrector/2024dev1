@@ -16,6 +16,7 @@ import com.study.spring.dto.PageResponseDTO;
 import com.study.spring.dto.ProductDTO;
 import com.study.spring.repository.ProductRepository;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -176,8 +177,9 @@ public class ProductServiceImpl implements ProductService {
 
 
 	@Override
+	@Transactional
 	public void remove(Long pno) {
-		// TODO Auto-generated method stub
+		productRepository.updateToDelete(pno,true);
 		
 	}
 	
