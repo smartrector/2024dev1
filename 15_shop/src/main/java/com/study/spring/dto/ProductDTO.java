@@ -19,7 +19,7 @@ public class ProductDTO {
 	private String pname;
 	private int price;
 	private String pdesc;
-	private boolean delFlog;
+	private boolean delFlag;
 	
 	
 	@Builder.Default

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.study.spring.dto.PageRequestDTO;
+import com.study.spring.dto.PageResponseDTO;
 import com.study.spring.dto.ProductDTO;
 import com.study.spring.service.ProductService;
 import com.study.spring.util.CustomFileUtil;
@@ -52,4 +54,23 @@ public class ProductController {
 		
 		return fileUtil.getFile(fileName);
 	}
+	
+	@GetMapping("/{pno}")
+	public ProductDTO read(
+			@PathVariable("pno") Long pno
+			) {
+		return productService.get(pno);
+	}
+	
+	
+	@GetMapping("/list")
+	public PageResponseDTO<ProductDTO> list(PageRequestDTO pageRequestDTO){
+		return productService.getList(pageRequestDTO);
+	}
+	
+	
+	
+	
+	
+	
 }
