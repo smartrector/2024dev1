@@ -37,6 +37,11 @@ dependencies {
 	
 	// https://mvnrepository.com/artifact/net.coobird/thumbnailator
 	implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.19'
+	
+	
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '3.3.0'
+	
 }
 
 tasks.named('test') {
