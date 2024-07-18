@@ -43,8 +43,8 @@ public class CartRepositoryTests {
 //	@Test
 //	public void testInsertByProduct() {
 //		String email = "user1@aaa.com";
-//		Long pno = 4L;
-//		int qty=10;
+//		Long pno = 6L;
+//		int qty=100;
 //		
 //		//이메일 cart_item에 자료확인
 //		CartItem cartItem = cartItemRepository.getItemOfPno(email, pno);
@@ -75,6 +75,35 @@ public class CartRepositoryTests {
 //		cartItemRepository.save(cartItem);
 //		
 //	}
+	
+//	@Test
+//	public void testUpdateByCino() {
+//		Long cino = 1L;
+//		int qty=100;
+//		
+//		Optional<CartItem> result = cartItemRepository.findById(cino);
+//		CartItem cartItem = result.orElseThrow();
+//		
+//		cartItem.changeQty(qty);
+//		cartItemRepository.save(cartItem);
+//		
+//		
+//	}
+	
+	@Test
+	public void testDeleteThenList() {
+		Long cino = 2L;
+		
+		Long cno = cartItemRepository.getCartFromItem(cino);
+		cartItemRepository.deleteById(cino);
+		
+		List<CartItemListDTO> cartItemList = cartItemRepository.getItemsOfCartDTOByCart(cno);
+		
+		for(CartItemListDTO dto:cartItemList) {
+			System.out.println(dto);
+		}
+		
+	}
 	
 	
 }

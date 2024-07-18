@@ -36,14 +36,14 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long> {
 	    @Query("select c.cno from Cart c left join CartItem ci on ci.cart = c where ci.cino = :cino")
 	    Long getCartFromItem(@Param("cino") Long cino);
 
-//	    @Query("select " +
-//	            " new com.spring.dto.CartItemListDTO(ci.cino, ci.qty,p.pno, p.pname, p.price, pi.fileName) " +
-//	            "from " +
-//	            " CartItem ci inner join Cart mc on ci.cart = mc " +
-//	            " left join Product p on ci.product = p " +
-//	            " left join p.imageList pi " +
-//	            "where " +
-//	            " mc.cno = :cno and pi.ord = 0 " +
-//	            " order by ci.cino desc")
-//	    List<CartItemListDTO> getItemsOfCartDTOByCart(@Param("cno") Long cno);
+	    @Query("select " +
+	            " new com.study.spring.dto.CartItemListDTO(ci.cino, p.pno, p.pname, ci.qty, p.price, pi.fileName) " +
+	            "from " +
+	            " CartItem ci inner join Cart mc on ci.cart = mc " +
+	            " left join Product p on ci.product = p " +
+	            " left join p.imageList pi " +
+	            "where " +
+	            " mc.cno = :cno and pi.ord = 0 " +
+	            " order by ci.cino desc")
+	    List<CartItemListDTO> getItemsOfCartDTOByCart(@Param("cno") Long cno);
 }
