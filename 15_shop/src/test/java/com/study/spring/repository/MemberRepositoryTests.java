@@ -21,42 +21,42 @@ public class MemberRepositoryTests {
 	@Autowired
 	private AuthenticationManagerBuilder authenticationManagerBuilder;
 	
-//	@Test
-//	public void testInsertData() {
-//		
-//		
-//		for (int i = 0; i < 10; i++) {
-//			Member member = Member.builder()
-//					.email("user"+i+"@aaa.com")
-//					.pw(passwordEncoder.encode("1111"))
-//					.nickname("user"+i)
-//					.build();
-//			
-//			member.addRole(MemberRole.USER);
-//			
-//			if(i>=5) {
-//				member.addRole(MemberRole.MEMBER);
-//			}
-//			if(i>=8) {
-//				member.addRole(MemberRole.ADMIN);
-//			}
-//			
-//			
-//			memberRepository.save(member);
-//		}
-//		
-//		
-//		
-//	}
-	
 	@Test
-	public void testRead() {
-		String email = "user6@aaa.com";
-		Member member = memberRepository.getWithRole(email);
+	public void testInsertData() {
 		
-		System.out.println(member.getMemberRoleList());
 		
-				
+		for (int i = 0; i < 10; i++) {
+			Member member = Member.builder()
+					.email("user"+i+"@aaa.com")
+					.pw(passwordEncoder.encode("1111"))
+					.nickname("user"+i)
+					.build();
+			
+			member.addRole(MemberRole.USER);
+			
+			if(i>=5) {
+				member.addRole(MemberRole.MEMBER);
+			}
+			if(i>=8) {
+				member.addRole(MemberRole.ADMIN);
+			}
+			
+			
+			memberRepository.save(member);
+		}
+		
+		
+		
 	}
+	
+//	@Test
+//	public void testRead() {
+//		String email = "user6@aaa.com";
+//		Member member = memberRepository.getWithRole(email);
+//		
+//		System.out.println(member.getMemberRoleList());
+//		
+//				
+//	}
 	
 }

@@ -3,7 +3,7 @@ package com.study.spring.controller;
 import java.security.Principal;
 import java.util.List;
 
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,9 +26,10 @@ import lombok.extern.log4j.Log4j2;
 public class CartController {
 	private final CartService cartService;
 	
-	@PreAuthorize("#itemDTO.email == authentication.name")
+
 	@PostMapping("/change")
 	public List<CartItemListDTO> changeCart(@RequestBody CartItemDTO itemDTO){
+
 		if(itemDTO.getQty()<=0) {
 			return cartService.remove(itemDTO.getCino());
 		}

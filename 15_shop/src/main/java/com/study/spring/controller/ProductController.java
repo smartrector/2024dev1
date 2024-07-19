@@ -51,7 +51,7 @@ public class ProductController {
 		return Map.of("Result",pno);
 	}
 	
-	@PreAuthorize("hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')")
+//	@PreAuthorize("hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')")
 	@GetMapping("/view/{fileName}")
 	public ResponseEntity<Resource> viewFilGet(
 			@PathVariable("fileName") String fileName
@@ -61,7 +61,7 @@ public class ProductController {
 	}
 	
 	
-	@PreAuthorize("hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')")
+//	@PreAuthorize("hasAnyRole('ROLE_MEMBER','ROLE_ADMIN')")
 	@GetMapping("/{pno}")
 	public ProductDTO read(
 			@PathVariable("pno") Long pno

@@ -1,6 +1,7 @@
 package com.study.spring.config;
 
-import java.util.Arrays;
+
+import java.util.List;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
@@ -52,6 +53,8 @@ public class CustomSecurityConfig {
 		
 		http.addFilterBefore(new JWTCheckFilter(), UsernamePasswordAuthenticationFilter.class);
 		
+	
+		
 		http.exceptionHandling(config -> {
 			config.accessDeniedHandler(new CustomAccessDeniedHandler());
 		});
@@ -62,10 +65,18 @@ public class CustomSecurityConfig {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource(){
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("*"));
-        configuration.setAllowedMethods(Arrays.asList("HEAD","GET","POST","PUT","DELETE","OPTIONS"));
-        configuration.setAllowedHeaders(Arrays.asList("Authorization","Cache-Control","Content-Type"));
-        configuration.setAllowCredentials(true);
+//        configuration.setAllowedOriginPatterns(List.of("http://localhost:3000")); // 로컬호스트 허용
+        configuration.setAllowedOriginPatterns(List.of("*")); // 로컬호스트 허용
+        configuration.addAllowedMethod("*"); // 모든 HTTP 메소드 허용 (GET, POST, 등)
+        configuration.addAllowedHeader("*"); // 모든 헤더 허용
+        configuration.setAllowCredentials(true); // 자격 증명 허용
+        
+        
+//        configuration.addAllowedOrigin("http://localhost:3000"); // 허용할 도메인
+//        configuration.setAllowedOrigins(Arrays.asList("*"));
+//        configuration.setAllowedMethods(Arrays.asList("HEAD","GET","POST","PUT","DELETE","OPTIONS"));
+//        configuration.setAllowedHeaders(Arrays.asList("Authorization","Cache-Control","Content-Type"));
+ //       configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
